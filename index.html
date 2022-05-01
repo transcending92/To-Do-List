@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Nova's Tasks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--Header > h1 title, form > inputs x2 -->
+    <header>
+        <h1>Super Nova's Task MAY0122</h1>
+        <form id="new-task-form">
+            <input 
+                type="text" 
+                id="new-task-input" 
+                placeholder="What are we doing today?"
+            >
+            <input 
+                type="submit"
+                id="new-task-submit" 
+                value="Add Task"
+            >
+        </form>
+    </header>
+
+
+    <!-- Main body containing tasks > main > section > tasks > task > actions > buttons-->
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+
+            <div id="tasks">
+             <!-- 
+                 There are 2 main parts of each individual task
+                1) task content itself
+                2) action buttons(edit/delete/save/etc)
+            -->
+            <!--read only-->
+                <div class="task">
+                    <div class="content">
+                        <input
+                          type="text"
+                          class="text"
+                          value="Super Nova Sprakles"
+                          readonly
+                        >
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+                    <!--Without readonly-->
+                    <div class="task">
+                        <div class="content">
+                            <input
+                              type="text"
+                              class="text"
+                              value="Look at all the galaxys surrounding us"
+                            >
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    
+            </div>
+
+        </section>
+    </main>
+
+
+
+
+
+
+    <script src="main.js"></script>    
+</body>
+</html>
