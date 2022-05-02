@@ -19,8 +19,8 @@ body {
     display: flex;
     flex-direction:  column;
     min-height: 180vh;
-    background: rgba(15, 3, 26, 0.733);
-    color: rgb(255, 240, 243);
+    background: var(--darker);
+    color: #fff;
 }
 
 header {
@@ -66,13 +66,21 @@ input, button {
     color: var(--pink);
     font-size: 1.25rem;
     font-weight: 700;
-
     background-image: linear-gradient(to right, var(--pink), var(--purple));
+    background-image: -moz-linear-gradient(right, var(--pink), var(--purple));
+    background-image: -webkit-linear-gradient(right, var(--pink), var(--purple));
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  /*  background-image: linear-gradient(to right, var(--pink), var(--purple));
     background-image: -moz-linear-gradient(to right, var(--pink), var(--purple));
     
 
     background-clip: text;
-  /*  -webkit-text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent; 
+      -webkit-background-clip: text;*/
 
     cursor: pointer;
    /* transition: 4s; */
@@ -145,19 +153,30 @@ main {
     /*transform: 0.4s; */
 }
 
-.task .action button:hover {
+.task .actions button:hover {
     opacity: 0.8;
 }
 
-.task .action button:active {
+.task .actions button:active {
     opacity: 0.6;
 }
 
-.task .action .edit {
+.task .actions .edit {
+    color: var(--pink);
+    
     background-image: linear-gradient(to right, var(--pink), var(--purple));
+    background-image: -moz-linear-gradient(right, var(--pink), var(--purple));
+    background-image: -webkit-linear-gradient(right, var(--pink), var(--purple));
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    /*background-image: linear-gradient(to right, var(--pink), var(--purple));
 
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;*/
+   
 }
 
 .task .actions .delete {
