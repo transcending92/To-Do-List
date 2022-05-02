@@ -1,3 +1,4 @@
+//Allow the window to refresh and keep the inputs on the page
 //Begin creating the element
 /* addEventListener takes two arguments
 * 1st is the TYPE of event being listened for
@@ -5,12 +6,14 @@
     when an event occurs
     */
 
+
 window.addEventListener('load', () => {
 // everything we want to do when the page loads
 // define document variables
     const form = document.querySelector('#new-task-form');
     const input = document.querySelector('#new-task-input');
     const list_el = document.querySelector('#tasks');
+    const task = document.querySelector('task');
 
     form.addEventListener('submit', (event) => {
 // !!Prevent default page refresh
@@ -26,13 +29,25 @@ window.addEventListener('load', () => {
         alert('Thanks for creating a new galaxy!')
     }*/
 
+//Add local storage
+    const newInput = document.querySelector('input');
+    task = document.querySelector('task');
+    
+    input.addEventListener('reloadOutput', display);
+
+    function display() {
+        localStorage.setItem('taskInputSaved', input.value);
+        
+        task.innerHTML = localStorage.getItem('taskInputSaved');
+
+}
 //create task element node
     const task_el = document.createElement('div');
-    task_el.classList.add('task');
+    task_el.classList.add('task'); 
 
 //create task content element node
     const task_content_el = document.createElement('div');
-    task_el.classList.add('content');
+    task_content_el.classList.add('content');
 
 //append child nodes to its parent node
     task_el.appendChild(task_content_el);
@@ -95,7 +110,5 @@ window.addEventListener('load', () => {
         list_el.removeChild(task_el);
 
     });
-
-    });
-
 });
+})
